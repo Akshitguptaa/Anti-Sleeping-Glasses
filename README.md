@@ -4,41 +4,4 @@ To addressing the issue of accidents caused by sleep fatigue among truck drivers
 In response to the pressing concern of road accidents stemming from driver fatigue, we propose a solution :
 Smart Glasses for Fatigue Prevention. This innovative wearable device aims to mitigate the risks associated with drowsy driving by proactively alerting drivers to signs of sleepiness, with help of sensors and buzzers.
 
-Here is our code to control the arduino board:-
-
-// Define pins
-const int irSensorPin = 2;
-const int buzzerPin = 3;
-const int vibrationMotorPin = 4;
-
-bool objectDetected = false;
-unsigned long objectDetectedTime;
-void setup() {
-pinMode(irSensorPin, INPUT);
-pinMode(buzzerPin, OUTPUT);
-pinMode(vibrationMotorPin, OUTPUT);
-}
-
-void loop() {
-int irSensorValue = digitalRead(irSensorPin);
-
-if (irSensorValue == LOW) {
-if (!objectDetected) {
-
-  objectDetected = true;
-  objectDetectedTime = millis();
-} else {
- 
-  if (millis() - objectDetectedTime >= 2000) {
- 
-    digitalWrite(buzzerPin, HIGH);
-    digitalWrite(vibrationMotorPin, HIGH);
-  }
-}
-} else {
-
-objectDetected = false;
-digitalWrite(buzzerPin, LOW);
-digitalWrite(vibrationMotorPin, LOW);
-}
-}
+![WhatsApp Image 2024-02-04 at 2 27 00 PM](https://github.com/Akshitguptaa/Anti-Sleeping-Glasses/assets/125907899/3bd1fae7-4689-4cf0-afae-d6b5bf5c1abd)
